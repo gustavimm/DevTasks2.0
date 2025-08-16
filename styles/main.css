@@ -1,0 +1,48 @@
+:root{
+
+    /* Background */
+    --primary-bg-color: #000000;
+    --secondary-bg-color: #2a2a2a;
+
+    /* Purple theme */
+    --purple-main: #8B5CF6;
+    --purple-hover: #7C3AED;
+
+    /* Text */
+    --primary-text-color: #f5f5f5;
+    --secondary-text-color: #c0c0c0;
+
+    /* Gradient */
+    --gradient-bg: linear-gradient(135deg, #000000, #1a0d2e);
+
+    /* Containers */
+    --container-bg: rgba(42, 42, 42, 0.8);
+    --container-border: rgba(255, 255, 255, 0.1);
+
+
+    /*Fonts */
+    
+    --main-font: 'Inter Tight', sans-serif;
+
+
+    /* Spacing System */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--main-font);
+}
+
+body{
+    background: var(--gradient-bg);
+    color: var(--primary-text-color);
+    min-height: 100vh;
+}

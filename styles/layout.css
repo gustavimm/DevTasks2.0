@@ -1,0 +1,29 @@
+main{
+    max-width: 600px;
+    margin: var(--space-xl) auto;
+    padding: var(--space-xl);
+    text-align: center;
+    background: var(--container-bg);
+    border-radius: 8px;
+}
+
+h1{
+    margin-bottom: var(--space-sm);
+}
+
+form{
+     margin-bottom: var(--space-sm);
+}
+
+#task-filters {
+    margin-bottom: var(--space-sm);
+}
+
+#task-filters button {
+    margin: var(--space-xs);
+}
+
+button{
+    margin-left: var(--space-lg);
+}
+
