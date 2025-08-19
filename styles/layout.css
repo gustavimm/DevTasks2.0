@@ -7,10 +7,6 @@ main{
     border-radius: 8px;
 }
 
-h1{
-    margin-bottom: var(--space-sm);
-}
-
 form{
      margin-bottom: var(--space-sm);
 }
@@ -27,3 +23,58 @@ button{
     margin-left: var(--space-lg);
 }
 
+.text-center{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+h1{
+    margin-bottom: var(--space-sm);
+    font-size: 20px;
+}
+
+.container {
+    display: inline-block;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-sm);
+    position: relative;
+}
+
+.main-text{
+    letter-spacing: 10px;
+    border-right: 5px solid;
+    white-space: nowrap; /* força texto numa linha só */
+    width: 100%; /* ocupa todo o espaço do container */
+    overflow: hidden; /* esconde o texto que ultrapassa o container */
+    
+    /* Para manter o texto em uma linha sem quebrar o efeito: */
+    display: inline-block;
+    
+    animation: 
+        typing 2s steps(30, end), /* animação de digitação */
+        cursor .4s step-end infinite alternate; /* animação do cursor piscando */
+}
+
+@keyframes cursor{
+    50% {
+        border-color: transparent; 
+    }
+}
+
+/* E ajusta a animação: */
+@keyframes typing {
+    from {
+        width: 0; /* começa com o texto escondido */
+        max-width: 0; /* garante que o texto não ultrapasse o container */
+    }
+    to {
+        width: 100%;
+        max-width: 100%;
+    }
+}
