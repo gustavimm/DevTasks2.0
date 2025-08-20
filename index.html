@@ -14,12 +14,18 @@
 
 
 <body>
+
+    <div id="succes-message">
+        <p>Tarefa adicionada com sucesso!</p>
+    </div>
+
     <main>
         <div class="container">
             <h1 class="main-text">Welcome to Dev Task 2.0</h1>
         </div>
     <form>
-        <input type="text" 
+        <input type="text"
+         aria-label="Digite sua tarefa"
          id="task-input"
          class="task-input"
          name="task" 
@@ -35,9 +41,11 @@
             <button type="button" data-filter="concluidas">Concluídas</button>
         </div>
 
-    <ol id="task-list">
+    <ul id="task-list">
         
-   </ol> 
+   </ul> 
     </main>
+
+    <script type="module" src="scripts/index.js"></script>
 </body>
 </html>
