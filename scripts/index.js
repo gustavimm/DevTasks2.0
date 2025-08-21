@@ -9,7 +9,7 @@ const taskList = document.querySelector('#task-list'); //Criando uma variável p
 
 //Event Listener para o formulário
 taskForm.addEventListener("submit", (event) =>{
-    event.preventDefault();
+    event.preventDefault(); //Impedindo recarregamento de página
 
     const taskTitle = taskInput.value;
     
