@@ -12,10 +12,10 @@ taskForm.addEventListener("submit", (event) =>{
 
     const taskTitle = taskInput.value;
     
-    //Agora, vamos trocar o console.log e chamar a função importada
-    createTask(taskTitle);
+    //chamando function importada
+    createTask(taskTitle, taskList);
 
-    //Um extra : limpar o input depois de adicionar
+    //limpa o input depois de adicionar
     taskInput.value = "";
 
     showSuccessMessage();

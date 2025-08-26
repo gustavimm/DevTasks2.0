@@ -83,22 +83,27 @@ h1{
 }
 
 
-#success-message{
-    display: none;
+#success-message {
     position: fixed;
-    left: 50%;
-    padding: var(--space-xs);
-    border-radius: 6px;
-    font-weight: 500;
-
-    /* adicionando estilos da caixa aqui */
-    background-color: #a7f3d0;
-    color: #1f2937;
+    right: 20px;
+    top: 20px;
+    
+    /* Slide animation: */
+    transform: translateX(400px); /* começa fora da tela */
+    opacity: 0;
+    
+    /* Estilos modernos: */
+    padding: var(--space-sm) var(--space-md);
+    border-radius: 8px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    
+    transition: all 0.5s ease-out;
 }
 
-#success-message.show{
-    display: block;
-    left: 50%;
-    top: 5px;
-    transform: translateX(-50%);
+#success-message.show {
+    transform: translateX(0);
+    opacity: 0.8;
 }
