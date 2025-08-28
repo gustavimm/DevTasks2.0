@@ -63,3 +63,18 @@ button[type="submit"]:hover {
     background: var(--purple-main);
     color: white;
 }
+
+
+/* Estilizando Lista de tarefas */
+
+#task-list li{
+    background-color: var(--secondary-bg-color);
+    padding: 15px;
+    border: 1px solid var(--purple-hover);
+    border-radius: 8px;
+    margin-bottom: var(--space-xs);
+    list-style-type: none;
+    text-align: left;
+
+    
+}
