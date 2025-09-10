@@ -78,3 +78,33 @@ button[type="submit"]:hover {
 
     
 }
+
+/* Estilizando o layout das tarefas */ 
+#task-list li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#task-list .task-content {
+    display: flex;
+    align-items: center; /* Alinha o texto verticalmente com o checkbox */
+    gap: var(--space-xs); /* Cria um "respiro" entre o checkbox e o texto */
+}
+
+#task-list li span {
+    overflow-wrap: break-word;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--purple-main);
+    transition: all 0.3s ease-in-out;   
+}
+input[type="checkbox"]:hover {
+    transform: scale(1.1);
+    transition: all 0.s ease-in-out;   
+}
