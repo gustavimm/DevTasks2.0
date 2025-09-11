@@ -13,20 +13,33 @@ export function createTask(title, list) {
     deleteButton.textContent = "X"; // Ícone de lixeira simples
     deleteButton.className = "delete-button";
 
-    // 1. Criando um container para agrupar o checkbox e o texto
+     // Criando um container para agrupar o checkbox e o texto
     const taskContent = document.createElement('div');
     taskContent.className = 'task-content'; // Damos uma classe para o grupo
 
-    // 2. Adiciona o checkbox e o texto DENTRO do novo container
+    // Adiciona o checkbox e o texto DENTRO do novo container
     taskContent.appendChild(checkBox);
     taskContent.appendChild(taskText);
 
-    // 3. Adiciona o grupo da esquerda (taskContent) e o botão da direita ao <li> principal
+    // Adiciona o grupo da esquerda (taskContent) e o botão da direita ao <li> principal
     taskItem.appendChild(taskContent);
     taskItem.appendChild(deleteButton);
 
-    // 4. Adiciona o <li> completo à lista
+    // Adiciona o <li> completo à lista
     list.appendChild(taskItem);
+
+
+    // Criando funcionalidade de deletar tarefa toda (li)
+    deleteButton.addEventListener("click", () => {
+        taskItem.remove();
+    });
+
+
+    //Criando funcionalidade de riscar tarefa ao ser concluída
+    checkBox.addEventListener('click', () => {
+    taskItem.classList.toggle("completed");
+    
+});
 }
 
 const successMessage = document.querySelector("#success-message");    

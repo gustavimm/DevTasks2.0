@@ -103,8 +103,49 @@ input[type="checkbox"] {
     cursor: pointer;
     accent-color: var(--purple-main);
     transition: all 0.3s ease-in-out;   
+    will-change: transform; /* Dica para o navegador otimizar a animação */
 }
 input[type="checkbox"]:hover {
     transform: scale(1.1);
     transition: all 0.s ease-in-out;   
+}
+
+
+/* Estilizando button delet */
+button.delete-button {
+    background: var(--red-main);
+    border: none;
+    color: white;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: 6px;
+    cursor: pointer;
+
+    font-family: var(--main-font);
+    font-weight: 600;
+
+    transition: all 0.3s ease-in-out;
+
+    will-change: transform; /* Dica para o navegador otimizar a animação */
+}
+
+button.delete-button:hover {
+    transform: scale(1.1);
+    background: var(--red-hover);
+    transition: all 0.2s ease-in-out;
+}
+
+/* Estilizando tarefa quando concluída*/
+#task-list li.completed {
+    opacity: 0.7;
+    border-color: var(--success-color);
+}
+
+/* Estilo para o TEXTO da tarefa quando concluída */
+#task-list li.completed span {
+    text-decoration: line-through;
+}
+
+/* Adicionando transições suaves para mudanças de estado */
+#task-list li{
+    transition: opacity 0.4s ease, border-color 0.3s ease;
 }
