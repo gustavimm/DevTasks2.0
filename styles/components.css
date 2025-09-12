@@ -149,3 +149,5 @@ button.delete-button:hover {
 #task-list li{
     transition: opacity 0.4s ease, border-color 0.3s ease;
 }
+
+

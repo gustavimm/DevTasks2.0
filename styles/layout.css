@@ -8,10 +8,15 @@ main{
     text-align: center;
     background: var(--container-bg);
     border-radius: 8px;
+    overflow-x: hidden;
+}
+
+body{
+    overflow-x: hidden;
 }
 
 form{
-     margin-bottom: var(--space-sm);
+    margin-bottom: var(--space-sm);
 }
 
 #task-filters {
@@ -36,8 +41,9 @@ form button[type="submit"] {
 }
 
 h1{
-    margin-bottom: var(--space-sm);
-    font-size: 20px;
+    font-size: 1rem;
+    letter-spacing: 0;
+    border-right: none;
 }
 
 .container {
@@ -106,4 +112,52 @@ h1{
 #success-message.show {
     transform: translateX(0);
     opacity: 0.8;
+}
+
+
+/* responsividade */
+@media (max-width: 640px) {
+    main {
+        width: 90%; /* Ocupa 90% da largura da tela, em vez de 600px */
+        padding: var(--space-md); /* Diminui um pouco o padding interno */
+        margin: var(--space-lg) auto; /* Ajusta a margem para telas pequenas */
+    }
+
+    .main-text { /* ou o seletor que você usa para o h1 */
+        font-size: 1.1rem;   
+        letter-spacing: 2px; 
+        animation: none;     
+        border-right: none;  
+        white-space: normal;
+        width: auto;         
+    }
+
+      /* Adicione este código DENTRO da sua media query */
+
+    form .task-input,
+    form button[type="submit"] {
+        width: 80%; /* Faz ambos ocuparem toda a largura do form */
+        margin-top: 20px;
+        
+    }
+
+    form button[type="submit"] {
+        margin-left: 0; /* O mais importante: reseta a margem do desktop! */
+        width: 50%; /* Ajusta a largura do botão */
+    }
+
+    h1 {
+        font-size: 12px;
+    }
+
+    #task-filters button {
+        margin: var(--space-xs) 2px;
+        padding: var(--space-xs);
+        font-size: 12px;
+    }
+
+    #task-list {
+        font-size: 14px;
+    }
+
 }
