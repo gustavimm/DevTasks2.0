@@ -1,69 +1,104 @@
-// No topo do arquivo, importamos a função específica do nosso outro arquivo
-import  { createTask, showSuccessMessage } from './task.js';
+// 1. IMPORTAÇÕES
+import { createTask, showSuccessMessage } from './task.js';
 
-//SELETORES 
-const taskForm = document.querySelector('form'); //Criando uma variável para o formulário
-const taskInput = document.querySelector('#task-input'); //Criando uma variável para o input de tarefa
-const taskList = document.querySelector('#task-list'); //Criando uma variável para a lista de tarefas
-const taskFilters = document.querySelector('#task-filters'); //Criando uma variável para os botões de filtro
+// 2. ESTADO DA APLICAÇÃO
+// Aqui guardamos os dados principais que a aplicação usa.
 
-
-taskFilters.addEventListener('click', (event) => {
- const filter = event.target.dataset.filter; // Obtém o filtro do botão clicado
-
- // 1. pega todos os itens da lista
- const tasks = taskList.querySelectorAll('li');
-
- // 2. passa por cada tarefa li uma por uma
-
- tasks.forEach(task => {
-    switch (filter) {
-        case 'todas':
-            // o que fazer quando o filtro for "todas"
-            task.style.display = 'flex'; // Mostra todas as tarefas
-            break;
+let tasks = []; // Nosso "banco de dados" de tarefas
 
 
-        case 'pendentes':
-            // o que fazer quando o filtro for "pendentes"
-            if (task.classList.contains('completed')) {
-                task.style.display = 'none'; // Esconde tarefas concluídas
-            } else {
-                // se não estiver concluída, mostra
-                task.style.display = 'flex'; // Mostra a tarefa
-            }
-            break;
+// 3. SELETORES DO DOM
+// Guardando as "pontes" para os elementos HTML aqui.
+const taskForm = document.querySelector('form');
+const taskInput = document.querySelector('#task-input');
+const taskList = document.querySelector('#task-list');
+const taskFilters = document.querySelector('#task-filters');
 
 
-            
-        case 'concluidas':
+// 4. FUNÇÕES
+// Aqui ficam as funções que definem o que nossa aplicação faz.
 
-        if (task.classList.contains('completed')) {
-            // se a tarefa está completada, então mostra
-            task.style.display = 'flex'; // Mostra a tarefa
-        } else {
-            task.style.display = 'none'; // Esconde tarefas pendentes
-        }
-            // o que fazer quando o filtro for "concluidas"
-            break;
+/**
+ * Salva o array de tarefas atual no localStorage.
+ */
+function saveTasks() {
+    localStorage.setItem('devtasks', JSON.stringify(tasks));
+}
 
+/**
+ * Carrega as tarefas do localStorage e as exibe na tela.
+ */
+function loadTasks() {
+    const savedTasks = localStorage.getItem('devtasks');
+
+    if (savedTasks) {
+        tasks = JSON.parse(savedTasks);
+        tasks.forEach(taskTitle => {
+            createTask(taskTitle, taskList);
+        });
     }
- });
+}
 
- 
-});
 
-//Event Listener para o formulário
-taskForm.addEventListener("submit", (event) =>{
-    event.preventDefault(); //Impedindo recarregamento de página
+// 5. EVENT LISTENERS
+// Ouvindo as ações do usuário.
+
+// Listener para o formulário de adição de tarefas
+taskForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
     const taskTitle = taskInput.value;
     
-    //chamando function importada
+    // Validação para não adicionar tarefas vazias
+    if (taskTitle.trim() === '') {
+        alert("Por favor, digite uma tarefa.");
+        return; // Para a execução da função aqui
+    }
+
+    // LÓGICA DE ADICIONAR TAREFA:
+    // 1. Adiciona a nova tarefa ao nosso array
+    tasks.push(taskTitle);
+
+    // 2. Salva o array atualizado no localStorage
+    saveTasks();
+
+    // 3. Cria o elemento SÓ DA NOVA TAREFA na tela
     createTask(taskTitle, taskList);
 
-    //limpa o input depois de adicionar
+    // Funções auxiliares
     taskInput.value = "";
-
     showSuccessMessage();
-}) 
+});
+
+
+// Listener para os botões de filtro
+taskFilters.addEventListener('click', (event) => {
+    // Garante que o clique foi em um botão
+    if (event.target.tagName !== 'BUTTON') {
+        return;
+    }
+
+    const filter = event.target.dataset.filter;
+    const taskItems = taskList.querySelectorAll('li');
+
+    taskItems.forEach(task => {
+        const isCompleted = task.classList.contains('completed');
+
+        switch (filter) {
+            case 'todas':
+                task.style.display = 'flex';
+                break;
+            case 'pendentes':
+                task.style.display = isCompleted ? 'none' : 'flex';
+                break;
+            case 'concluidas':
+                task.style.display = isCompleted ? 'flex' : 'none';
+                break;
+        }
+    });
+});
+
+
+// 6. INICIALIZAÇÃO
+// Código que roda assim que a página é carregada.
+loadTasks();
