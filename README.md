@@ -27,9 +27,8 @@ Desktop View
 <img width="1894" height="712" alt="print-3" src="https://github.com/user-attachments/assets/58f3ebee-1fea-4f94-96fa-f7dfa11786fa" />
 
 Mobile View
-<img width="826" height="1600" alt="image" src="https://github.com/user-attachments/assets/83edc91d-2f17-47e7-87da-b4229db84496" />
-<img width="820" height="1600" alt="image" src="https://github.com/user-attachments/assets/41ba539b-4497-465e-8de7-1097e2fb4c48" />
-<img width="825" height="1600" alt="image" src="https://github.com/user-attachments/assets/203deb6a-9841-4b6e-9e55-790723e2caa0" />
+<img width="899" height="1599" alt="image" src="https://github.com/user-attachments/assets/1011f2d7-7819-4723-afbd-6e0fe3b97d37" />
+
 
 
 
