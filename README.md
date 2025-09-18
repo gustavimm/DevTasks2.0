@@ -30,7 +30,8 @@ Desktop View
 
 Mobile View
 
-<img width="715" height="907" alt="Captura de tela 2025-09-18 115958" src="https://github.com/user-attachments/assets/c8e0d18e-cb83-450c-97ac-4538bcf228e6" />
+<img width="1418" height="907" alt="Captura de tela 2025-09-18 115958" src="https://github.com/user-attachments/assets/712c5d2a-55f2-4880-b270-72dc61c1bd5d" />
+
 
 
 
