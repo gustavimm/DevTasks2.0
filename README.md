@@ -28,6 +28,7 @@ Desktop View
 
 
 
+Mobile View
 <img width="899" height="1599" alt="image" src="https://github.com/user-attachments/assets/1011f2d7-7819-4723-afbd-6e0fe3b97d37" />
 
 Mobile View
