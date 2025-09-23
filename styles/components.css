@@ -104,6 +104,8 @@ input[type="checkbox"] {
     accent-color: var(--purple-main);
     transition: all 0.3s ease-in-out;   
     will-change: transform; /* Dica para o navegador otimizar a animação */
+
+    flex-shrink: 0; /* Impede que o checkbox encolha */
 }
 input[type="checkbox"]:hover {
     transform: scale(1.1);
