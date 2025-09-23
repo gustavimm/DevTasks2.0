@@ -21,15 +21,9 @@ Uma aplicação web moderna para gerenciamento de tarefas (To-Do List) construí
 
 ## 📸 Screenshots
 
-Desktop View
 <img width="1899" height="762" alt="print-1" src="https://github.com/user-attachments/assets/c1fe4b8b-1f7d-4fb6-9dcd-fbe99f3e1a93" />
 <img width="1897" height="729" alt="print-2" src="https://github.com/user-attachments/assets/f7173a59-83d3-4888-b5fd-744def77dfc9" />
 
-
-
-Mobile View
-
-<img width="1418" height="907" alt="Captura de tela 2025-09-18 115958" src="https://github.com/user-attachments/assets/712c5d2a-55f2-4880-b270-72dc61c1bd5d" />
 
 
 
