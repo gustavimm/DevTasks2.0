@@ -24,7 +24,6 @@ Uma aplicação web moderna para gerenciamento de tarefas (To-Do List) construí
 Desktop View
 <img width="1899" height="762" alt="print-1" src="https://github.com/user-attachments/assets/c1fe4b8b-1f7d-4fb6-9dcd-fbe99f3e1a93" />
 <img width="1897" height="729" alt="print-2" src="https://github.com/user-attachments/assets/f7173a59-83d3-4888-b5fd-744def77dfc9" />
-<img width="1894" height="712" alt="print-3" src="https://github.com/user-attachments/assets/58f3ebee-1fea-4f94-96fa-f7dfa11786fa" />
 
 
 
